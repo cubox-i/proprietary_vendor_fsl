@@ -23,3 +23,18 @@ PRODUCT_COPY_FILES += \
     $(VENDOR_PATH)/brcm/bcm4330_fw.bin:system/etc/firmware/brcm/brcmfmac4330-sdio.bin \
     $(VENDOR_PATH)/brcm/bcm4330_nvram.txt:system/etc/firmware/brcm/brcmfmac4330-sdio.txt \
     $(VENDOR_PATH)/brcm/bcm4330.hcd:system/etc/firmware/brcm/BCM4330.hcd
+
+# GPU and HW composer
+# Vivante
+PRODUCT_COPY_FILES += \
+    $(VENDOR_PATH)/gpu/egl/egl.cfg:system/lib/egl/egl.cfg \
+    $(VENDOR_PATH)/gpu/egl/libEGL_VIVANTE.so:system/lib/egl/libEGL_VIVANTE.so \
+    $(VENDOR_PATH)/gpu/egl/libGLESv1_CM_VIVANTE.so:system/lib/egl/libGLESv1_CM_VIVANTE.so \
+    $(VENDOR_PATH)/gpu/egl/libGLESv2_VIVANTE.so:system/lib/egl/libGLESv2_VIVANTE.so \
+    $(VENDOR_PATH)/gpu/libGAL.so:system/lib/libGAL.so \
+    $(VENDOR_PATH)/gpu/libGAL.so:obj/lib/libGAL.so \
+    $(VENDOR_PATH)/gpu/libg2d.so:system/lib/libg2d.so \
+    $(VENDOR_PATH)/gpu/libg2d.so:obj/lib/libg2d.so \
+    $(VENDOR_PATH)/gpu/libGLSLC.so:system/lib/libGLSLC.so \
+    $(VENDOR_PATH)/gpu/hw/gralloc_viv.imx6.so:system/lib/hw/gralloc_viv.imx6.so \
+    $(VENDOR_PATH)/gpu/hw/hwcomposer_viv.imx6.so:system/lib/hw/hwcomposer_viv.imx6.so

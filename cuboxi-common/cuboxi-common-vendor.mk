@@ -12,11 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Live wallpaper packages and Themes
-PRODUCT_PACKAGES := \
+# Live Wallpapers
+PRODUCT_PACKAGES += \
+    Galaxy4 \
+    HoloSpiralWallpaper \
     LiveWallpapers \
     LiveWallpapersPicker \
     MagicSmokeWallpapers \
+    NoiseField \
+    PhaseBeam \
     VisualizationWallpapers \
     librs_jni
 
