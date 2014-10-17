@@ -38,3 +38,9 @@ PRODUCT_COPY_FILES += \
     $(VENDOR_PATH)/gpu/libGLSLC.so:system/lib/libGLSLC.so \
     $(VENDOR_PATH)/gpu/hw/gralloc_viv.imx6.so:system/lib/hw/gralloc_viv.imx6.so \
     $(VENDOR_PATH)/gpu/hw/hwcomposer_viv.imx6.so:system/lib/hw/hwcomposer_viv.imx6.so
+
+# Bootloader
+# Prebuilt u-boot.img and SPL
+PRODUCT_COPY_FILES += \
+    $(VENDOR_PATH)/bootloader/u-boot.img:u-boot.img \
+    $(VENDOR_PATH)/bootloader/SPL:SPL
