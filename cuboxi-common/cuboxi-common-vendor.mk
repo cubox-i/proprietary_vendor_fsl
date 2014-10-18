@@ -12,20 +12,63 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-    Galaxy4 \
-    HoloSpiralWallpaper \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    MagicSmokeWallpapers \
-    NoiseField \
-    PhaseBeam \
-    VisualizationWallpapers \
-    librs_jni
+VENDOR_PATH := vendor/fsl/cuboxi-common/proprietary
 
-# Publish that we support the live wallpaper feature.
-PRODUCT_COPY_FILES := \
-    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml
+# Bootloader
+# Prebuilt u-boot.img and SPL
+PRODUCT_COPY_FILES += \
+    $(VENDOR_PATH)/bootloader/u-boot.img:u-boot.img \
+    $(VENDOR_PATH)/bootloader/SPL:SPL
 
-$(call inherit-product, vendor/fsl/cuboxi-common/cuboxi-common-vendor-blobs.mk)
+# WLAN
+# 4329 and 4330 firmware files
+PRODUCT_COPY_FILES += \
+    $(VENDOR_PATH)/brcm/bcm4329_fw.bin:system/etc/firmware/brcm/brcmfmac4329-sdio.bin \
+    $(VENDOR_PATH)/brcm/bcm4329_nvram.txt:system/etc/firmware/brcm/brcmfmac4329-sdio.txt \
+    $(VENDOR_PATH)/brcm/bcm4329.hcd:system/etc/firmware/brcm/BCM4329B1.hcd \
+    $(VENDOR_PATH)/brcm/bcm4330_fw.bin:system/etc/firmware/brcm/brcmfmac4330-sdio.bin \
+    $(VENDOR_PATH)/brcm/bcm4330_nvram.txt:system/etc/firmware/brcm/brcmfmac4330-sdio.txt \
+    $(VENDOR_PATH)/brcm/bcm4330.hcd:system/etc/firmware/brcm/BCM4330.hcd
+
+# GPU and HW composer
+# Vivante
+PRODUCT_COPY_FILES += \
+    $(VENDOR_PATH)/gpu/egl/egl.cfg:system/lib/egl/egl.cfg \
+    $(VENDOR_PATH)/gpu/egl/libEGL_VIVANTE.so:system/lib/egl/libEGL_VIVANTE.so \
+    $(VENDOR_PATH)/gpu/egl/libGLESv1_CM_VIVANTE.so:system/lib/egl/libGLESv1_CM_VIVANTE.so \
+    $(VENDOR_PATH)/gpu/egl/libGLESv2_VIVANTE.so:system/lib/egl/libGLESv2_VIVANTE.so \
+    $(VENDOR_PATH)/gpu/libGAL.so:system/lib/libGAL.so \
+    $(VENDOR_PATH)/gpu/libGAL.so:obj/lib/libGAL.so \
+    $(VENDOR_PATH)/gpu/libg2d.so:system/lib/libg2d.so \
+    $(VENDOR_PATH)/gpu/libg2d.so:obj/lib/libg2d.so \
+    $(VENDOR_PATH)/gpu/libGLSLC.so:system/lib/libGLSLC.so \
+    $(VENDOR_PATH)/gpu/hw/gralloc_viv.imx6.so:system/lib/hw/gralloc_viv.imx6.so \
+    $(VENDOR_PATH)/gpu/hw/hwcomposer_viv.imx6.so:system/lib/hw/hwcomposer_viv.imx6.so
+
+# Ril
+# Prebuilt lib ril
+PRODUCT_COPY_FILES += \
+    $(VENDOR_PATH)/ril/libreference-ril-zte.so:system/lib/libreference-ril-zte.so
+
+# Sensor
+# Mag
+PRODUCT_COPY_FILES += \
+    $(VENDOR_PATH)/sensor/magd:system/bin/magd
+
+# VPU test binaries
+PRODUCT_COPY_FILES += \
+    $(VENDOR_PATH)/vpu/gmem_info:system/bin/gmem_info \
+    $(VENDOR_PATH)/vpu/mxc_ipudev_test:system/bin/mxc_ipudev_test \
+    $(VENDOR_PATH)/vpu/mxc_vpu_test:system/bin/mxc_vpu_test
+
+# Terminal
+PRODUCT_COPY_FILES += \
+    $(VENDOR_PATH)/terminal/Term.apk:system/app/Term.apk \
+    $(VENDOR_PATH)/terminal/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
+
+# SuperSU
+PRODUCT_COPY_FILES += \
+    $(VENDOR_PATH)/supersu/su:/system/xbin/daemonsu \
+    $(VENDOR_PATH)/supersu/su:system/xbin/su \
+    $(VENDOR_PATH)/supersu/Superuser.apk:system/app/Superuser.apk \
+    $(VENDOR_PATH)/supersu/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
