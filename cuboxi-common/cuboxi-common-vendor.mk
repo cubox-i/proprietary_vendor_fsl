@@ -29,10 +29,10 @@ PRODUCT_COPY_FILES += \
 # WLAN
 # 4329 and 4330
 PRODUCT_COPY_FILES += \
-    $(VENDOR_PATH)/brcm/bcm4329_fw.bin:system/vendor/firmware/brcm/brcmfmac4329-sdio.bin \
-    $(VENDOR_PATH)/brcm/bcm4329_nvram.txt:system/vendor/firmware/brcm/brcmfmac4329-sdio.txt \
-    $(VENDOR_PATH)/brcm/bcm4330_fw.bin:system/vendor/firmware/brcm/brcmfmac4330-sdio.bin \
-    $(VENDOR_PATH)/brcm/bcm4330_nvram.txt:system/vendor/firmware/brcm/brcmfmac4330-sdio.txt
+    $(VENDOR_PATH)/brcm/bcm4329_fw.bin:system/etc/firmware/brcm/brcmfmac4329-sdio.bin \
+    $(VENDOR_PATH)/brcm/bcm4329_nvram.txt:system/etc/firmware/brcm/brcmfmac4329-sdio.txt \
+    $(VENDOR_PATH)/brcm/bcm4330_fw.bin:system/etc/firmware/brcm/brcmfmac4330-sdio.bin \
+    $(VENDOR_PATH)/brcm/bcm4330_nvram.txt:system/etc/firmware/brcm/brcmfmac4330-sdio.txt
 
 # GPU
 PRODUCT_COPY_FILES += \
