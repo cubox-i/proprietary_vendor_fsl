@@ -80,6 +80,9 @@ PRODUCT_COPY_FILES += \
 # SuperSU
 PRODUCT_COPY_FILES += \
     $(VENDOR_PATH)/supersu/su:/system/xbin/daemonsu \
+    $(VENDOR_PATH)/supersu/supolicy:system/xbin/supolicy \
     $(VENDOR_PATH)/supersu/su:system/xbin/su \
+    $(VENDOR_PATH)/supersu/su:system/bin/.ext/.su \
     $(VENDOR_PATH)/supersu/Superuser.apk:system/app/Superuser.apk \
-    $(VENDOR_PATH)/supersu/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+    $(VENDOR_PATH)/supersu/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon \
+    $(VENDOR_PATH)/supersu/installed_su_daemon:system/etc/.installed_su_daemon
